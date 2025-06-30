@@ -6,7 +6,7 @@ const QRCode = require('qrcode');
 const { customAlphabet } = require('nanoid');
 const path = require('path');
 
-const User = require('./models/User');
+const User = require('./models/user');
 const Attendance = require('./models/Attendance');
 const QRToken = require('./models/QRToken');
 
