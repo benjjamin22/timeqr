@@ -159,9 +159,9 @@ app.get('/admin/logout', adminAuth, (req, res) => {
 
 // Start server
 //app.listen(3000, () => console.log('Server running on http://localhost:3000'));
-
+const PORT = process.env.PORT || 8000
 connectDB().then(() => {
-    app.listen(3000, () => {
+    app.listen(PORT, () => {
         console.log('Server running on http://localhost:3000');
     })
 });
