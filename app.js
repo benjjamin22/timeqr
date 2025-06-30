@@ -83,7 +83,7 @@ app.get('/dashboard', auth, async (req, res) => {
   const qrUrl = `http://localhost:3000/scan/${token}`;
   const qrImage = await QRCode.toDataURL(qrUrl);
 
-  res.render('dashboard', { qrImage, username: user.username });
+  res.render('dashboard', { qrImage, username: user.username,usernamet:qrUrl });
 });
 
 // Scan & mark attendance
