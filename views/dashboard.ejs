@@ -1,0 +1,9 @@
+<h2>Welcome <%= username %></h2>
+<p>Scan your personal QR code below (valid 60s)</p>
+<img src="<%= qrImage %>" />
+<br>
+<a href="/logout">Logout</a>
+
+<script>
+  setTimeout(() => location.reload(), 60000); // Refresh every 60s
+</script>

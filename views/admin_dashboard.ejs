@@ -1,0 +1,16 @@
+<h2>Admin Dashboard</h2>
+<a href="/admin/export">⬇ Export as CSV</a> | <a href="/admin/logout">Logout Admin</a>
+<table border="1" cellpadding="5" cellspacing="0">
+  <thead>
+    <tr><th>User</th><th>Date</th><th>Time In</th></tr>
+  </thead>
+  <tbody>
+    <% logs.forEach(log => { %>
+      <tr>
+        <td><%= log.user?.username || 'Unknown' %></td>
+        <td><%= new Date(log.date).toLocaleDateString() %></td>
+        <td><%= log.timeIn ? new Date(log.timeIn).toLocaleTimeString() : '-' %></td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
