@@ -80,7 +80,7 @@ app.get('/dashboard', auth, async (req, res) => {
   const expiresAt = new Date(Date.now() + 60 * 1000);
   await QRToken.create({ token, user: userId, expiresAt });
 
-  const qrUrl = `http://localhost:3000/scan/${token}`;
+  const qrUrl = `https://timeqr.onrender.com/scan/${token}`;
   const qrImage = await QRCode.toDataURL(qrUrl);
 
   res.render('dashboard', { qrImage, username: user.username,usernamet:qrUrl });
