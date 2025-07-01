@@ -92,7 +92,7 @@ app.get('/scan/:token', auth, async (req, res) => {
   const userId = req.session.userId;
 
   const qr = await QRToken.findOne({ token });
-  if (!qr) return res.send('Invalid or expired QR code');
+  //if (!qr) return res.send('Invalid or expired QR code');
   if (qr.used) return res.send('QR code already used');
   if (qr.expiresAt < new Date()) return res.send('QR code expired');
   if (qr.user.toString() !== userId.toString()) return res.send('This QR code is not for you');
